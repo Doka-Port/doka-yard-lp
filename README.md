@@ -5,11 +5,19 @@
 </p>
 
 <p align="center">
+  <img alt="React" src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" />
+  <img alt="Vite" src="https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white" />
+  <img alt="TailwindCSS" src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white" />
+  <img alt="TypeScript" src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white" />
+</p>
+
+<p align="center">
   <strong>Landing page institucional da Doka Yard Intelligence</strong><br/>
   Plataforma de inteligência operacional para gestão de pátios portuários, alimentada por <em>YMS (Yard Management System)</em> com tecnologia de ponta.
 </p>
 
 <p align="center">
+  <a href="#-acesso-%C3%A0-aplica%C3%A7%C3%A3o">Deploy</a> •
   <a href="#-tecnologias">Tecnologias</a> •
   <a href="#-equipe">Equipe</a> •
   <a href="#-pré-requisitos">Pré-requisitos</a> •
@@ -18,6 +26,14 @@
   <a href="#-estrutura-do-projeto">Estrutura</a> •
   <a href="#-licença">Licença</a>
 </p>
+
+---
+
+## 🌐 Acesso à Aplicação
+
+O projeto está disponível em produção através do link abaixo:
+
+> **[Acessar a Plataforma 🚀](https://seu-link-de-deploy-aqui.com)**
 
 ---
 
@@ -77,8 +93,8 @@ Certifique-se de ter as seguintes ferramentas instaladas:
 1. **Clone o repositório**
 
    ```bash
-   git clone https://github.com/seu-usuario/landing_page_doka.git
-   cd landing_page_doka
+   git clone https://github.com/Doka-Port/doka-yard-lp.git
+   cd doka-yard-lp
    ```
 
 2. **Instale as dependências**
@@ -165,9 +181,3 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-
----
-
-<p align="center">
-  Feito com ❤️ pela equipe <strong>Doka Yard Intelligence</strong>
-</p>
