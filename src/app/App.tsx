@@ -5,6 +5,8 @@ import { PortSteps } from './components/port-steps';
 import { PortFeatures } from './components/port-features';
 import { PortProcess } from './components/port-process';
 import { PortYMS } from './components/port-yms';
+import { PortAbout } from './components/port-about';
+import { PortContact } from './components/port-contact';
 import { PortCTA } from './components/port-cta';
 import { PortFooter } from './components/port-footer';
 
@@ -16,9 +18,8 @@ export default function App() {
       <PortStatement />
       <PortSteps />
       <PortYMS />
-      <PortFeatures />
-      <PortProcess />
-      <PortCTA />
+      <PortAbout />
+      <PortContact />
       <PortFooter />
     </div>
   );

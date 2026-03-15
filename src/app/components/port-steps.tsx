@@ -4,23 +4,19 @@ import { useRef, useMemo } from 'react';
 const steps = [
   {
     number: '1',
-    text: 'Coleta de dados\nem tempo real',
+    text: 'Coleta de dados\noperacionais e do pátio',
   },
   {
     number: '2',
-    text: 'Processamento inteligente\nvia modelos de IA',
+    text: 'Construção da\nréplica virtual via\nhistórico operacional',
   },
   {
     number: '3',
-    text: 'Orquestração automática\nde filas e berços',
+    text: 'Otimização global via\nalgoritmo PSO',
   },
   {
     number: '4',
-    text: 'Sincronização entre\nferrovia e navio',
-  },
-  {
-    number: '5',
-    text: 'Dashboard unificado\nvisibilidade total',
+    text: 'Geração de instruções\ndiretas para a operação',
   },
 ];
 
@@ -199,7 +195,7 @@ export function PortSteps() {
   );
 
   return (
-    <section ref={containerRef} className="bg-white py-32 overflow-hidden relative">
+    <section id="como-funciona" ref={containerRef} className="bg-white py-32 overflow-hidden relative">
       {/* Single Continuous Central Line */}
       <div
         className="absolute left-1/2 top-32 bottom-32 w-[2px] -translate-x-1/2 bg-[#F2F2F2]"

@@ -12,8 +12,7 @@ export function PortNavbar() {
   }, []);
 
   const navLinks = [
-    { label: 'Solução', href: '#solucao' },
-    { label: 'Como Funciona', href: '#processo' },
+    { label: 'Como Funciona', href: '#como-funciona' },
     { label: 'Sobre', href: '#sobre' },
   ];
 
