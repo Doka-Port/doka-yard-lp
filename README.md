@@ -32,8 +32,9 @@
 ## 🌐 Acesso à Aplicação
 
 O projeto está disponível em produção através do link abaixo:
+ 
+> **<a href="https://doka-yard-lp.onrender.com" target="_blank" rel="noopener noreferrer">Acessar a Plataforma 🚀</a>**
 
-> **[Acessar a Plataforma 🚀](https://doka-yard-lp.onrender.com)**
 
 ---
 
