@@ -97,7 +97,7 @@ export function PortNavbar() {
             color: '#fff',
           }}
         >
-          Acessar demo
+          Conferir demo
         </motion.a>
       </nav>
     </motion.div>
