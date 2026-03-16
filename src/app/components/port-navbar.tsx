@@ -83,7 +83,9 @@ export function PortNavbar() {
 
         {/* CTA */}
         <motion.a
-          href="#contato"
+          href="https://github.com/Doka-Port/doka-yard-master"
+          target="_blank"
+          rel="noopener noreferrer"
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
           className="px-5 py-1.5 rounded-full ml-1 transition-all duration-200"

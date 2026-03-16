@@ -33,7 +33,7 @@
 
 O projeto está disponível em produção através do link abaixo:
 
-> **[Acessar a Plataforma 🚀](https://seu-link-de-deploy-aqui.com)**
+> **[Acessar a Plataforma 🚀](https://doka-yard-lp.onrender.com)**
 
 ---
 
