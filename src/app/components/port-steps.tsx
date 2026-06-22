@@ -20,7 +20,7 @@ const steps = [
   },
 ];
 
-const COLOR_GRAY = '#E2E8EE'; // Neutral 200 equivalent
+const COLOR_GRAY = '#E2E8EE';
 const COLOR_NEON = '#00BFFF';
 const COLOR_DARK = '#050524';
 
@@ -46,7 +46,7 @@ function AnimatedChar({
     [COLOR_GRAY, COLOR_NEON, COLOR_DARK]
   );
 
-  if (char === ' ') return <span>{'\u00A0'}</span>;
+  if (char === ' ') return <span>{' '}</span>;
   if (char === '\n') return <br />;
   return <motion.span style={{ color }}>{char}</motion.span>;
 }
@@ -99,31 +99,93 @@ function StepRow({
   const totalChars = totalCharsSource.length;
 
   return (
-    <div ref={ref} className="grid grid-cols-[1fr_2px_1fr] min-h-[40vh] md:min-h-[50vh] relative">
-      {/* Left Column */}
-      <div className="flex flex-col justify-center items-end pr-10 md:pr-16 text-right">
-        {isLeft && (
-          <div className="relative group">
-            <h3 className="relative">
-              <AnimatedText
-                text={step.text}
-                progress={scrollYProgress}
-                charOffset={0}
-                totalChars={totalChars}
-                style={{
-                  fontFamily: 'var(--font-geist)',
-                  fontWeight: 500,
-                  fontSize: 'clamp(24px, 4vw, 56px)',
-                  lineHeight: 1.1,
-                  letterSpacing: '-0.03em',
-                  display: 'inline-block',
-                }}
-              />
-              <span className="inline-block align-bottom ml-4 mb-[0.2em]">
+    <div ref={ref} className="relative">
+      {/* Mobile layout — single column, left-aligned with left-side line offset */}
+      <div className="md:hidden flex flex-col justify-center py-10 pl-14 pr-6 min-h-[28vh]">
+        <span className="block mb-2">
+          <AnimatedText
+            text={step.number}
+            progress={scrollYProgress}
+            charOffset={0}
+            totalChars={totalChars}
+            style={{
+              fontFamily: 'var(--font-geist-mono)',
+              fontWeight: 500,
+              fontSize: '14px',
+              opacity: 0.8,
+            }}
+          />
+        </span>
+        <h3>
+          <AnimatedText
+            text={step.text}
+            progress={scrollYProgress}
+            charOffset={step.number.length}
+            totalChars={totalChars}
+            style={{
+              fontFamily: 'var(--font-geist)',
+              fontWeight: 500,
+              fontSize: 'clamp(22px, 5vw, 38px)',
+              lineHeight: 1.15,
+              letterSpacing: '-0.03em',
+              display: 'inline-block',
+            }}
+          />
+        </h3>
+      </div>
+
+      {/* Desktop layout — alternating left / right */}
+      <div className="hidden md:grid grid-cols-[1fr_2px_1fr] min-h-[40vh] lg:min-h-[50vh] relative">
+        {/* Left Column */}
+        <div className="flex flex-col justify-center items-end pr-10 md:pr-16 text-right">
+          {isLeft && (
+            <div className="relative group">
+              <h3 className="relative">
+                <AnimatedText
+                  text={step.text}
+                  progress={scrollYProgress}
+                  charOffset={0}
+                  totalChars={totalChars}
+                  style={{
+                    fontFamily: 'var(--font-geist)',
+                    fontWeight: 500,
+                    fontSize: 'clamp(24px, 4vw, 56px)',
+                    lineHeight: 1.1,
+                    letterSpacing: '-0.03em',
+                    display: 'inline-block',
+                  }}
+                />
+                <span className="inline-block align-bottom ml-4 mb-[0.2em]">
+                  <AnimatedText
+                    text={step.number}
+                    progress={scrollYProgress}
+                    charOffset={step.text.length}
+                    totalChars={totalChars}
+                    style={{
+                      fontFamily: 'var(--font-geist-mono)',
+                      fontWeight: 500,
+                      fontSize: 'clamp(14px, 1.5vw, 24px)',
+                      opacity: 0.8,
+                    }}
+                  />
+                </span>
+              </h3>
+            </div>
+          )}
+        </div>
+
+        {/* Center column (spacer for the global line) */}
+        <div className="relative h-full" />
+
+        {/* Right Column */}
+        <div className="flex flex-col justify-center items-start pl-10 md:pl-16 text-left">
+          {!isLeft && (
+            <div className="relative group">
+              <div className="mb-2">
                 <AnimatedText
                   text={step.number}
                   progress={scrollYProgress}
-                  charOffset={step.text.length}
+                  charOffset={0}
                   totalChars={totalChars}
                   style={{
                     fontFamily: 'var(--font-geist-mono)',
@@ -132,50 +194,25 @@ function StepRow({
                     opacity: 0.8,
                   }}
                 />
-              </span>
-            </h3>
-          </div>
-        )}
-      </div>
-
-      {/* Center column (spacer for the global line) */}
-      <div className="relative h-full" />
-
-      {/* Right Column */}
-      <div className="flex flex-col justify-center items-start pl-10 md:pl-16 text-left">
-        {!isLeft && (
-          <div className="relative group">
-            <div className="mb-2">
-              <AnimatedText
-                text={step.number}
-                progress={scrollYProgress}
-                charOffset={0}
-                totalChars={totalChars}
-                style={{
-                  fontFamily: 'var(--font-geist-mono)',
-                  fontWeight: 500,
-                  fontSize: 'clamp(14px, 1.5vw, 24px)',
-                  opacity: 0.8,
-                }}
-              />
+              </div>
+              <h3>
+                <AnimatedText
+                  text={step.text}
+                  progress={scrollYProgress}
+                  charOffset={step.number.length}
+                  totalChars={totalChars}
+                  style={{
+                    fontFamily: 'var(--font-geist)',
+                    fontWeight: 500,
+                    fontSize: 'clamp(24px, 4vw, 56px)',
+                    lineHeight: 1.1,
+                    letterSpacing: '-0.03em',
+                  }}
+                />
+              </h3>
             </div>
-            <h3>
-              <AnimatedText
-                text={step.text}
-                progress={scrollYProgress}
-                charOffset={step.number.length}
-                totalChars={totalChars}
-                style={{
-                  fontFamily: 'var(--font-geist)',
-                  fontWeight: 500,
-                  fontSize: 'clamp(24px, 4vw, 56px)',
-                  lineHeight: 1.1,
-                  letterSpacing: '-0.03em',
-                }}
-              />
-            </h3>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </div>
   );
@@ -195,10 +232,18 @@ export function PortSteps() {
   );
 
   return (
-    <section id="como-funciona" ref={containerRef} className="bg-white py-32 overflow-hidden relative">
-      {/* Single Continuous Central Line */}
+    <section id="como-funciona" ref={containerRef} className="bg-white py-24 md:py-32 overflow-hidden relative">
+      {/* Mobile: left-aligned vertical line */}
       <div
-        className="absolute left-1/2 top-32 bottom-32 w-[2px] -translate-x-1/2 bg-[#F2F2F2]"
+        className="md:hidden absolute left-8 top-24 bottom-24 w-[2px] bg-[#F2F2F2]"
+        style={{ zIndex: 0 }}
+      >
+        <motion.div className="h-full w-full" style={{ backgroundColor: lineColor }} />
+      </div>
+
+      {/* Desktop: centered vertical line */}
+      <div
+        className="hidden md:block absolute left-1/2 top-32 bottom-32 w-[2px] -translate-x-1/2 bg-[#F2F2F2]"
         style={{ zIndex: 0 }}
       >
         <motion.div
@@ -215,4 +260,3 @@ export function PortSteps() {
     </section>
   );
 }
-
