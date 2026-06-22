@@ -150,8 +150,8 @@ export function PortContact() {
 
       <div className="relative z-30 text-center px-6 flex flex-col items-center">
         {/* Radial glow behind the CTA area */}
-        <div 
-          className="absolute w-[500px] h-[500px] rounded-full pointer-events-none"
+        <div
+          className="absolute w-[min(500px,90vw)] h-[min(500px,90vw)] rounded-full pointer-events-none"
           style={{
             background: 'radial-gradient(circle, rgba(123, 179, 204, 0.12) 0%, transparent 70%)',
           }}

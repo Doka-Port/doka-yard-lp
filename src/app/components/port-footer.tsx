@@ -27,10 +27,16 @@ export function PortFooter() {
 
           {/* Links */}
           <div className="flex flex-wrap gap-8">
-            {['Como Funciona', 'Sobre'].map((link) => (
+            {['Como Funciona', 'Sobre'].map((link) => {
+            const href = `#${link.toLowerCase().replace(/ /g, '-')}`;
+            return (
               <a
                 key={link}
-                href={`#${link.toLowerCase().replace(/ /g, '-')}`}
+                href={href}
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+                }}
                 className="transition-colors duration-200"
                 style={{
                   fontFamily: 'var(--font-inter)',
@@ -47,7 +53,8 @@ export function PortFooter() {
               >
                 {link}
               </a>
-            ))}
+            );
+          })}
           </div>
         </div>
 
